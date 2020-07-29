@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PageDefault from '../../../components/PageDefault';
 import { Link } from 'react-router-dom';
+import FormField from '../../../components/FormField';
 
 function CadastroCategoria() {
 
@@ -9,7 +10,7 @@ function CadastroCategoria() {
     const valoresIniciais = {
         nome: '',
         descricao: '',
-        cor: '#000',
+        cor: '',
     };
 
     const [values, setValues] = useState(valoresIniciais);
@@ -17,6 +18,7 @@ function CadastroCategoria() {
     function handleSubmit(e) {
         e.preventDefault();
         setCategorias([...categorias, values]);
+        setValues(valoresIniciais);
     }
 
     function handleInput(e) {
@@ -35,41 +37,32 @@ function CadastroCategoria() {
             <h1>Cadastro de Categoria: {values.nome}</h1>
 
             <form onSubmit={handleSubmit}>
-                <div>
-                    <label>
-                        Nome da categoria:
-                        <input
-                            type="text"
-                            name="nome"
-                            value={values.nome}
-                            onChange={handleInput}
-                        />
-                    </label>
-                </div>
 
-                <div>
-                    <label>
-                        Descrição:
-                        <textarea
-                            type="text"
-                            name="descricao"
-                            value={values.descricao}
-                            onChange={handleInput}
-                        />
-                    </label>
-                </div>
+                <FormField
+                    type="text"
+                    name="nome" 
+                    value={values.nome}
+                    onChange={handleInput}
+                >Nome da categoria:</FormField>
 
-                <div>
-                    <label>
-                        Cor:
-                        <input
-                            type="color"
-                            name="cor"
-                            value={values.color}
-                            onChange={handleInput}
-                        />
-                    </label>
-                </div>
+            <div>
+                <label>
+                    Descrição:
+                    <textarea
+                        type="text"
+                        name="descricao"
+                        value={values.descricao}
+                        onChange={handleInput}
+                    />
+                </label>
+            </div>
+
+                <FormField
+                    type="color"
+                    name="cor" 
+                    value={values.cor}
+                    onChange={handleInput}
+                >Cor: </FormField>
 
 
                 <button>
