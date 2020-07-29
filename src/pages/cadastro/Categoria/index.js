@@ -4,24 +4,73 @@ import { Link } from 'react-router-dom';
 
 function CadastroCategoria() {
 
-    const [categorias, setCategorias] = useState(['Teste']);
-    const [nomeDaCategoria, setNomeDaCategoria] = useState('Valor Inicial');
+    const [categorias, setCategorias] = useState([]);
+
+    const valoresIniciais = {
+        nome: '',
+        descricao: '',
+        cor: '#000',
+    };
+
+    const [values, setValues] = useState(valoresIniciais);
+
+    function handleSubmit(e) {
+        e.preventDefault();
+        setCategorias([...categorias, values]);
+    }
+
+    function handleInput(e) {
+        setValue(e.target.getAttribute('name'), e.target.value);
+    }
+
+    function setValue(chave, valor) {
+        setValues({
+            ...values,
+            [chave]: valor,
+        });
+    }
 
     return (
         <PageDefault>
-            <h1>Cadastro de Categoria: {nomeDaCategoria}</h1>
+            <h1>Cadastro de Categoria: {values.nome}</h1>
 
-            <form>
-                <label>
-                    Nome da categoria:
-                    <input
-                        type="text"
-                        value={nomeDaCategoria}
-                        onChange={(e) => {
-                            setNomeDaCategoria(e.target.value);
-                        }}
-                    />
-                </label>
+            <form onSubmit={handleSubmit}>
+                <div>
+                    <label>
+                        Nome da categoria:
+                        <input
+                            type="text"
+                            name="nome"
+                            value={values.nome}
+                            onChange={handleInput}
+                        />
+                    </label>
+                </div>
+
+                <div>
+                    <label>
+                        Descrição:
+                        <textarea
+                            type="text"
+                            name="descricao"
+                            value={values.descricao}
+                            onChange={handleInput}
+                        />
+                    </label>
+                </div>
+
+                <div>
+                    <label>
+                        Cor:
+                        <input
+                            type="color"
+                            name="cor"
+                            value={values.color}
+                            onChange={handleInput}
+                        />
+                    </label>
+                </div>
+
 
                 <button>
                     Cadastrar
@@ -29,10 +78,10 @@ function CadastroCategoria() {
             </form>
 
             <ul>
-                {categorias.map((categoria) => {
+                {categorias.map((categoria, i) => {
                     return (
-                        <li key={categoria}>
-                            {categoria}
+                        <li key={`${categoria.nome}${i}`}>
+                            {categoria.nome}
                         </li>
                     );
                 })}
