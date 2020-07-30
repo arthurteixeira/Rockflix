@@ -3,9 +3,26 @@ import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 
 const Label = styled.label``;
+Label.Text = styled.span`
+  color: #E5E5E5;
+  height: 57px;
+  position: absolute; 
+  top: 0;
+  left: 16px;
+
+  display: flex;
+  align-items: center;
+
+  transform-origin: 0% 0%;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 300;
+
+  transition: .1s ease-in-out;
+`;
 
 const Input = styled.input`
-   background: #53585D;
+  background: #53585D;
   color: #F5F5F5;
   display: block;
   width: 100%;
@@ -59,17 +76,22 @@ function FormField({
   const isTextArea = type === 'textarea';
   const tag = isTextArea ? 'textarea' : 'input';
 
+  const hasValue = value.length;
+
   return (
     <FormFieldWrapper>
       <Label htmlFor={fieldId}>
-        {children}
         <Input
           as={tag}
           type={type}
           name={name}
           value={value}
+          hasValue={hasValue}
           onChange={onChange}
         />
+        <Label.Text>
+          {children}
+        </Label.Text>
       </Label>
     </FormFieldWrapper>
   );
