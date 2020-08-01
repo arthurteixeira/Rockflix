@@ -1,10 +1,30 @@
 {
-    "categorias": [
-        {
-            "id": 1,
-            "nome": "Front-end",
-            "descricao": "Uma categoria",
-            "cor": "#cbd1ff"
-        }
-    ]
+  "categorias": [
+    {
+      "id": 1,
+      "titulo": "Front-end",
+      "descricao": "Uma categoria",
+      "cor": "#cbd1ff"
+    }
+  ],
+  "videos": [
+    {
+      "id": 1,
+      "titulo": "OASIS: Noel Gets To The Point Dublin (05/12/1997)",
+      "url": "https://www.youtube.com/watch?v=sMR0_CiVFR8",
+      "categoriaId": 1
+    },
+    {
+      "titulo": "'Better Than Goin' To Church' Noel Gallagher's Acoustic Collection",
+      "url": "https://www.youtube.com/watch?v=TMANjCHuL3I",
+      "categoriaId": 1,
+      "id": 2
+    },
+    {
+      "titulo": "Noel Gallagher's High Flying Birds (Live for Absolute Radio)",
+      "url": "https://www.youtube.com/watch?v=GnnfXPJxnCo",
+      "categoriaId": 1,
+      "id": 3
+    }
+  ]
 }

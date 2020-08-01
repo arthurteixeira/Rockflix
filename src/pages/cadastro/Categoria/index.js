@@ -3,34 +3,18 @@ import { Link } from 'react-router-dom';
 import PageDefault from '../../../components/PageDefault';
 import FormField from '../../../components/FormField';
 import Button from '../../../components/Button';
+import useForm from '../../../hooks/useForm';
 
 function CadastroCategoria() {
-  const [categorias, setCategorias] = useState([]);
-
   const valoresIniciais = {
-    nome: '',
+    id: 0,
+    titulo: '',
     descricao: '',
     cor: '',
   };
 
-  const [values, setValues] = useState(valoresIniciais);
-
-  function setValue(chave, valor) {
-    setValues({
-      ...values,
-      [chave]: valor,
-    });
-  }
-
-  function handleSubmit(e) {
-    e.preventDefault();
-    setCategorias([...categorias, values]);
-    setValues(valoresIniciais);
-  }
-
-  function handleInput(e) {
-    setValue(e.target.getAttribute('name'), e.target.value);
-  }
+  const [categorias, setCategorias] = useState([]);
+  const { values, handleInput, clearForm } = useForm(valoresIniciais);
 
   useEffect(() => {
     const URL = window.location.hostname.includes('localhost')
@@ -43,45 +27,49 @@ function CadastroCategoria() {
       ]);
     });
   }, []);
-
   return (
     <PageDefault>
       <h1>
         Cadastro de Categoria:
-        {values.nome}
+        {values.titulo}
       </h1>
 
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={function handleSubmit(infosDoEvento) {
+        infosDoEvento.preventDefault();
+        setCategorias([
+          ...categorias,
+          values,
+        ]);
+
+        clearForm();
+      }}
+      >
 
         <FormField
           type="text"
-          name="nome"
-          value={values.nome}
+          label="Nome da categoria:"
+          name="titulo"
+          value={values.titulo}
           onChange={handleInput}
-        >
-          Nome da categoria:
-        </FormField>
+        />
 
         <FormField
           type="textarea"
+          label="Descrição:"
           name="descricao"
           value={values.descricao}
           onChange={handleInput}
-        >
-          Descrição:
-        </FormField>
+        />
 
         <FormField
           type="color"
+          label="Cor:"
           name="cor"
           value={values.cor}
           onChange={handleInput}
-        >
-          Cor:
-          {' '}
-        </FormField>
+        />
 
-        <Button>
+        <Button type="submit">
           Cadastrar
         </Button>
       </form>
@@ -94,8 +82,9 @@ function CadastroCategoria() {
 
       <ul>
         {categorias.map((categoria, i) => (
-          <li key={`${categoria.nome}${i}`}>
-            {categoria.nome}
+          // eslint-disable-next-line react/no-array-index-key
+          <li key={`${i}${categoria.titulo}`}>
+            {categoria.titulo}
           </li>
         ))}
       </ul>
