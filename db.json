@@ -1,30 +1,132 @@
 {
   "categorias": [
     {
-      "id": 1,
-      "titulo": "Front-end",
-      "descricao": "Uma categoria",
-      "cor": "#cbd1ff"
+      "titulo": "Clipes",
+      "descricao": "Clipes de músicas",
+      "cor": "#0face8",
+      "id": 1
+    },
+    {
+      "titulo": "Ao Vivo",
+      "descricao": "Shows ao vivo",
+      "cor": "#26d938",
+      "id": 2
+    },
+    {
+      "titulo": "Acústico",
+      "descricao": "Shows acústicos",
+      "cor": "#e3b424",
+      "id": 3
     }
   ],
   "videos": [
     {
-      "id": 1,
-      "titulo": "OASIS: Noel Gets To The Point Dublin (05/12/1997)",
-      "url": "https://www.youtube.com/watch?v=sMR0_CiVFR8",
-      "categoriaId": 1
+      "titulo": "Liam Gallagher - Once (Official video feat. Eric Cantona)",
+      "url": "https://www.youtube.com/watch?v=MDhiQfekdxo",
+      "categoriaId": 1,
+      "id": 1
     },
     {
-      "titulo": "'Better Than Goin' To Church' Noel Gallagher's Acoustic Collection",
-      "url": "https://www.youtube.com/watch?v=TMANjCHuL3I",
+      "titulo": "Oasis - All Around The World",
+      "url": "https://www.youtube.com/watch?v=bdT8ixdxPX4",
       "categoriaId": 1,
       "id": 2
     },
     {
-      "titulo": "Noel Gallagher's High Flying Birds (Live for Absolute Radio)",
-      "url": "https://www.youtube.com/watch?v=GnnfXPJxnCo",
+      "titulo": "Oasis - Falling Down",
+      "url": "https://www.youtube.com/watch?v=PJMOTbaVh44",
       "categoriaId": 1,
       "id": 3
+    },
+    {
+      "titulo": "Noel Gallagher’s High Flying Birds - If I Had A Gun… (Official Music Video)",
+      "url": "https://www.youtube.com/watch?v=1NMUDb3Ewhs",
+      "categoriaId": 1,
+      "id": 4
+    },
+    {
+      "titulo": "Foo Fighters. Walk.",
+      "url": "https://www.youtube.com/watch?v=4PkcfQtibmU",
+      "categoriaId": 1,
+      "id": 5
+    },
+    {
+      "titulo": "Gorillaz - Humility (Official Video)",
+      "url": "https://www.youtube.com/watch?v=E5yFcdPAGv0",
+      "categoriaId": 1,
+      "id": 6
+    },
+    {
+      "titulo": "Gorillaz - Feel Good Inc. (Official Video)",
+      "url": "https://www.youtube.com/watch?v=HyHNuVaZJ-k",
+      "categoriaId": 1,
+      "id": 7
+    },
+    {
+      "titulo": "Arctic Monkeys - Snap Out Of It (Official Video)",
+      "url": "https://www.youtube.com/watch?v=H8tLS_NOWLs",
+      "categoriaId": 1,
+      "id": 8
+    },
+    {
+      "titulo": "FOO FIGHTERS LIVE Full Concert 2019",
+      "url": "https://www.youtube.com/watch?v=l-zrnm2FlSo",
+      "categoriaId": 2,
+      "id": 9
+    },
+    {
+      "titulo": "Gorillaz - Rock Werchter 2018, Belgium (Full Show)",
+      "url": "https://www.youtube.com/watch?v=FV3VXKtnt2g",
+      "categoriaId": 2,
+      "id": 10
+    },
+    {
+      "titulo": "Arctic Monkeys @TRNSMT, Glasgow 2018 (Best Audio Quality)",
+      "url": "https://www.youtube.com/watch?v=ppqP39p6VmI&t=3184s",
+      "categoriaId": 2,
+      "id": 11
+    },
+    {
+      "titulo": "Oasis - Familiar to Millions",
+      "url": "https://www.youtube.com/watch?v=LBfgTtcdCsM&t=3649s",
+      "categoriaId": 2,
+      "id": 12
+    },
+    {
+      "titulo": "Red Hot Chili Peppers - T in The Park 2016",
+      "url": "https://www.youtube.com/watch?v=u_EV9H6t7bw",
+      "categoriaId": 2,
+      "id": 13
+    },
+    {
+      "titulo": "Acustico MTV - Bandas Gauchas (DVD Completo)",
+      "url": "https://www.youtube.com/watch?v=TfNMy7RWRHA",
+      "categoriaId": 3,
+      "id": 14
+    },
+    {
+      "titulo": "MTV Unplugged: Liam Gallagher",
+      "url": "https://www.youtube.com/watch?v=z-7umhXUZ4c&t=751s",
+      "categoriaId": 3,
+      "id": 15
+    },
+    {
+      "titulo": "Noel Acoustic",
+      "url": "https://www.youtube.com/watch?v=nXAgqS-3pww&t=774s",
+      "categoriaId": 3,
+      "id": 16
+    },
+    {
+      "titulo": "Engenheiros do Hawaii - Acústico MTV (DVD Ao Vivo) ",
+      "url": "https://www.youtube.com/watch?v=pRfeuzs2QSY",
+      "categoriaId": 3,
+      "id": 17
+    },
+    {
+      "titulo": "Foo Fighters - Everlong (Acoustic)",
+      "url": "https://www.youtube.com/watch?v=AAMgHB-1_Fo",
+      "categoriaId": 3,
+      "id": 18
     }
   ]
 }

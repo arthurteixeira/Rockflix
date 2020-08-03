@@ -33,16 +33,11 @@ function CadastroVideo() {
         e.preventDefault();
 
         const categoriaEscolhida = categorias.find((categoria) => categoria.titulo === values.categoria);
-        console.log(categoriaEscolhida);
-        console.log(values.titulo);
-        console.log(values.url);
-        console.log(categoriaEscolhida.id);
         videosRepository.create({
           titulo: values.titulo,
           url: values.url,
           categoriaId: categoriaEscolhida.id,
         }).then(() => {
-          console.log('cadastrou com sucesso');
           history.push('/');
         });
       }}
