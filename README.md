@@ -9,10 +9,6 @@ npm install
 npm start
 ```
 
-## :dart: Website
-
-- https://rockflix-three.vercel.app/
-
 ## 📝 License
 
 Esse projeto é licenciado pela [MIT License](./LICENSE).
